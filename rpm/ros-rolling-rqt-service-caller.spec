@@ -54,6 +54,7 @@ rqt_service_caller provides a GUI plugin for calling arbitrary services.
 
 %install
 %py3_install -- --prefix "%{bloom_prefix}"
+install -m0644 -p -D package.xml %{buildroot}%{bloom_prefix}/share/%{pkg_name}/package.xml
 
 
 %if 0%{?with_tests}
