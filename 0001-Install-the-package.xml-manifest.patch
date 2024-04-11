@@ -1,0 +1,24 @@
+From cceabe5012a1eab8d68c80a243a3968f0738e24e Mon Sep 17 00:00:00 2001
+From: Scott K Logan <logans@cottsay.net>
+Date: Fri, 22 Mar 2024 20:42:47 -0500
+Subject: [PATCH] Install the package.xml manifest
+
+---
+ rpm/ros-rolling-rqt-service-caller.spec | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/rpm/ros-rolling-rqt-service-caller.spec b/rpm/ros-rolling-rqt-service-caller.spec
+index e0ddca80f6d0..578a1818a251 100644
+--- a/rpm/ros-rolling-rqt-service-caller.spec
++++ b/rpm/ros-rolling-rqt-service-caller.spec
+@@ -54,6 +54,7 @@ rqt_service_caller provides a GUI plugin for calling arbitrary services.
+ 
+ %install
+ %py3_install -- --prefix "%{bloom_prefix}"
++install -m0644 -p -D package.xml %{buildroot}%{bloom_prefix}/share/%{pkg_name}/package.xml
+ 
+ 
+ %if 0%{?with_tests}
+-- 
+2.44.0
+
